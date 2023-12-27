@@ -1,6 +1,7 @@
 ride_count = 0
 friends = []
 
+# 1人目
 friend = {}
 puts "お友達の名前は？"
 friend[:name] = gets.chomp
@@ -14,6 +15,7 @@ else
   puts "#{friend[:name]}くんは乗車できません！"
 end
 
+# 2人目
 friend = {}
 puts "お友達の名前は？"
 friend[:name] = gets.chomp
@@ -27,6 +29,7 @@ else
   puts "#{friend[:name]}くんは乗車できません！"
 end
 
+# 3人目
 friend = {}
 puts "お友達の名前は？"
 friend[:name] = gets.chomp
@@ -39,5 +42,6 @@ if friend[:height] >= 130
 else
   puts "#{friend[:name]}くんは乗車できません！"
 end
+
 
 puts "乗車するのは#{ride_count}人です"
