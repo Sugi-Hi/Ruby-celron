@@ -16,3 +16,15 @@ user_data = [
 user_data.each do |u|
   puts u[:user][:profile][:name]
 end
+
+
+#----------------------------------------------------
+# TechCamp演習問題
+# 問題1 
+user = {name: "山田", age: 20}
+# 問題2 
+user = {name: "山田", age: 20}
+user[:age] = 22
+user[:gender] = "男性"
+
+puts "#{user}"
