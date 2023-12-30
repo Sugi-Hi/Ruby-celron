@@ -26,11 +26,3 @@ fire_truck.ride_car(3)
 Car.run
 
 
-#----------------------------------------------------
-# TechCamp演習問題
-# 問題1 
-def introduce
-  puts "私の名前はテックキャンプです。"
-end
-
-introduce
