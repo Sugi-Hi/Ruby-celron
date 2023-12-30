@@ -25,3 +25,12 @@ def double
 end
 
 puts double
+
+# 問題3 
+def calculate_price_with_tax
+  price = 300
+  tax = 0.1
+  puts price + price * tax
+end
+
+calculate_price_with_tax
