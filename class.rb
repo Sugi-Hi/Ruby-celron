@@ -26,3 +26,24 @@ fire_truck.ride_car(3)
 Car.run
 
 
+#----------------------------------------------------
+# TechCamp演習問題
+# 問題 1
+class Animal
+  def initialize
+    @recipe = recipe
+  end
+
+  def introduce
+    puts "山田太郎"
+  end
+end
+
+# 問題 2
+class Human
+  def initialize
+  
+  end
+end
+
+Human.new
