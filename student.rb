@@ -1,8 +1,8 @@
-def register_student(data)
+def register_student(students)
   puts "氏名を入力して下さい:"
   name = gets.chomp
   puts "何組か入力して下さい:"
-  number = gets.chomp
+  room = gets.chomp
   puts "国語の点数を入力して下さい:"
   japanese = gets.to_i
   puts "数学の点数を入力して下さい:"
@@ -13,7 +13,11 @@ def register_student(data)
   science = gets.to_i
   puts "英語の点数を入力して下さい:"
   english = gets.to_i
+
+  student = {name: name, room: room, jap: japanese, math: math, social: social, science: science, eng: english}
+  students << student
 end
 
+students=[]
 
 puts "生徒の成績表"
