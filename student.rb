@@ -18,6 +18,43 @@ def register_student(students)
   students << student
 end
 
+def index_student(students)
+  
+  puts "生徒一覧表#受験者"
+  students.each_with_index do |student, index|
+  puts "受験番号：#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
+  end
+  
+  puts "見たい生徒を受験番号で選択入力して下さい！"
+  index = gets.to_i
+
+  show_student(students[index-1])
+
+end
+
+def show_student(student)
+  puts "氏名：#{student[:name]} 、#{student[:name]}組"
+  puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
+end
+
 students=[]
 
-puts "生徒の成績表"
+while true
+
+  puts "生徒の成績データ表について、下記の[受付番号]で選択入力して下さい！"
+  puts "[0]生徒の成績データ登録"
+  puts "[1]全生徒の成績データ一覧"
+  puts "[2]終了"
+  input = gets.to_i
+
+  if input == 0
+    register_student(students)
+  elsif input == 1
+    index_student(students)
+  elsif input == 2
+    exit
+  else 
+    puts "無効な受付番号なので再度0~2で選択入力して下さい!"
+  end
+
+end
