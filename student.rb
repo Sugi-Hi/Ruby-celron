@@ -14,8 +14,8 @@ def register_student(students)
   puts "英語の点数を入力して下さい:"
   english = gets.to_i
 
-  student = {name: name, room: room, jap: japanese, math: math, social: social, science: science, eng: english}
-  students << student
+  student = {name: name, room: room, jap: japanese, math: math, social: social, science: science, eng: english} # 各受験生徒のデータ成績のハッシュ化
+  students << student # 一人一人の受験生徒を全生徒へ追加
 end
 
 def index_student(students)
@@ -39,7 +39,7 @@ def show_student(student)
   puts "合計：#{student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点"
 end
 
-students=[]
+students=[] # 全受験生徒の配列化
 
 while true
 
