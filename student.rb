@@ -23,6 +23,7 @@ def index_student(students)
   puts "生徒一覧表#受験者"
   students.each_with_index do |student, index|
   puts "受験番号：#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
+  number = index + 1 
   end
   
   puts "見たい生徒を受験番号で選択入力して下さい！"
@@ -35,6 +36,7 @@ end
 def show_student(student)
   puts "氏名：#{student[:name]} 、#{student[:name]}組"
   puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
+  puts "合計：#{student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点"
 end
 
 students=[]
