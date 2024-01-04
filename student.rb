@@ -18,10 +18,10 @@ def register_student(students)
   students << student # 一人一人の受験生徒を全生徒へ追加
 end
 
-def index_student(students)
+def index_student(students) # 全受験生徒における一覧の表示
   
   puts "生徒一覧表#受験者"
-  students.each_with_index do |student, index|
+  students.each_with_index do |student, index| 
   puts "受験番号： 00#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
   number = index + 1 # 受験者数(受験番号と同じ数値とする)
   end
@@ -29,11 +29,11 @@ def index_student(students)
   puts "見たい生徒を受験番号で選択入力して下さい！"
   index = gets.to_i
 
-  show_student(students[index-1])
+  show_student(students[index-1]) # 全受験生徒の配列化
 
 end
 
-def show_student(student)
+def show_student(student) # 選択した受験生徒の詳細
   puts "氏名：#{student[:name]} 、#{student[:name]}組"
   puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
   puts "合計：#{student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点"
