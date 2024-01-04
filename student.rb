@@ -22,8 +22,8 @@ def index_student(students)
   
   puts "生徒一覧表#受験者"
   students.each_with_index do |student, index|
-  puts "受験番号：#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
-  number = index + 1 
+  puts "受験番号： 00#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
+  number = index + 1 # 受験者数(受験番号と同じ数値とする)
   end
   
   puts "見たい生徒を受験番号で選択入力して下さい！"
