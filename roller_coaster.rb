@@ -44,4 +44,4 @@ else
 end
 
 
-puts "乗車するのは#{ride_count}人です"
+puts "乗車するのは#{ride_count}人です。"
