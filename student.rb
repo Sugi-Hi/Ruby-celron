@@ -35,7 +35,7 @@ def index_student(students) # 全受験生徒における一覧の表示
 end
 
 def show_student(student) # 選択した受験生徒の詳細
-  puts "氏名：#{student[:name]} 、#{student[:name]}組"
+  puts "氏名：#{student[:name]} 、#{student[:room]}組"
   puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
   puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点
 end
