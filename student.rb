@@ -37,9 +37,9 @@ end
 def show_student(student) # 選択した受験生徒の詳細
   puts "氏名：#{student[:name]} 、#{student[:room]}組"
   puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
-  puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点
+  puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}：合計点
 end
-def average(students)
+def average(students) # 平均点
   sum_jap=0
   sum_math=0
   sum_social=0
