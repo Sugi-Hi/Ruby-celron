@@ -25,12 +25,12 @@ def index_student(students) # 全受験生徒における一覧の表示
   puts "受験番号： 00#{index+1}  氏名：#{student[:name]} 、#{student[:room]}組"
   end
   puts "受験生徒数：#{students.length}名"
+  average(students)
 
   puts "見たい生徒を受験番号(上位ケタの0を抜いて)で選択入力して下さい！"
   index = gets.to_i
 
   show_student(students[index-1]) # 全受験生徒の配列化
-  average(students)
 
 end
 
