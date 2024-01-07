@@ -26,10 +26,11 @@ def index_student(students) # 全受験生徒における一覧の表示
   end
   puts "受験生徒数：#{students.length}名"
 
-  puts "見たい生徒を受験番号で選択入力して下さい！"
+  puts "見たい生徒を受験番号(上位ケタの0を抜いて)で選択入力して下さい！"
   index = gets.to_i
 
   show_student(students[index-1]) # 全受験生徒の配列化
+  average(students)
 
 end
 
@@ -38,6 +39,22 @@ def show_student(student) # 選択した受験生徒の詳細
   puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
   puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}点
 end
+def average(students)
+  sum_jap=0
+  sum_math=0
+  sum_social=0
+  sum_science=0
+  sum_eng=0
+  students.each do |student|
+    sum_jap     += student[:jap]
+    sum_math    += student[:math]
+    sum_social  += student[:social]
+    sum_science += student[:science]
+    sum_eng     += student[:eng]
+  end  
+  puts "各教科の平均点⇒ 国語：#{sum_jap/students.length}点、数学：#{sum_math/students.length}点、社会：#{sum_social/students.length}点、理科：#{sum_science/students.length}点、英語：#{sum_eng/students.length}点"
+end
+
 
 students=[] # 全受験生徒の配列化
 
