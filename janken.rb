@@ -7,8 +7,9 @@ def janken
   you_player = gets.to_i
   pc_player = rand(3)
 
+    # 条件(0~2)該当すれば無限ループを終了する！
     if you_player >= 0 && you_player <= 2
-    break  # exit:def定義文と最初から終了する！
+      break  # exit:def定義文と最初から終了する！
     end
     
   end
