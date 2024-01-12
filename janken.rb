@@ -8,7 +8,7 @@ def janken
   pc_player = rand(3)
 
     if you_player >= 0 && you_player <= 2
-    break
+    break  # exit:def定義文と最初から終了する！
     end
     
   end
@@ -32,7 +32,7 @@ end
 puts "最初はグー、ジャイケンポイ！"
 
 next_play = true
-while next_play do
+while next_play do  # 次のプレイをtrue条件で、続けるコーディング！
   next_play = janken
 end
 
