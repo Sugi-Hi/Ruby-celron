@@ -15,7 +15,7 @@ def register_item(items)  # 販売商品の登録
   items << item
 end
 
-def index_item(items)
+def index_item(items)  # 販売商品の一覧
 
 end
 
