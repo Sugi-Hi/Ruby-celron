@@ -1,4 +1,4 @@
-def register_item(items)
+def register_item(items)  # 販売商品の登録
   item = {}
 
   puts "販売中の商品名を入力して下さい！"
