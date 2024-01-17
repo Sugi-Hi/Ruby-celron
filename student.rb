@@ -14,7 +14,7 @@ def register_student(students)
   puts "英語の点数を入力して下さい:"
   english = gets.to_i
 
-  five_subjects = japanese+math+social+science+english # 合計点
+  five_subjects = japanese + math + social + science + english # 合計点
   
   # 各受験生徒のデータ成績のハッシュ化
   student = {name: name, room: room, jap: japanese, math: math, social: social, science: science, eng: english, sum: five_subjects } 
@@ -53,13 +53,14 @@ def average(students) # 平均点
   sum_social=0
   sum_science=0
   sum_eng=0
+  sum_subjects=0 # 合計点の加算も忘れず初期値定義
   students.each do |student|
-    sum_jap     += student[:jap]
-    sum_math    += student[:math]
-    sum_social  += student[:social]
-    sum_science += student[:science]
-    sum_eng     += student[:eng]
-    sum_subjects+= student[:sum]
+    sum_jap      += student[:jap]
+    sum_math     += student[:math]
+    sum_social   += student[:social]
+    sum_science  += student[:science]
+    sum_eng      += student[:eng]
+    sum_subjects += student[:sum]
     
     sum_hensa = (student[:sum]-sum_subjects/students.length)*(student[:sum]-sum_subjects/students.length) / students.length
   end  
