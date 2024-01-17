@@ -22,7 +22,7 @@ end
 def show_item(item)
 
 end
-def buy_item(item)
+def buy_item(item)  # 販売商品の購入
 
 end 
 
