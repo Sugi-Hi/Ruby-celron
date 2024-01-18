@@ -1,4 +1,4 @@
-value = 3
+value = 3  # 規定値
 
 if value > 0
   puts "値は正です"
@@ -9,8 +9,7 @@ else
 end
 
 
-
-input = gets.to_i
+input = gets.to_i  # 指定値
 
 if input <= 10
    puts "10以下の数字です"
