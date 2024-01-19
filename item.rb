@@ -43,6 +43,11 @@ def show_item(item)
   puts "販売商品の包装物:#{item[:form]}"
   puts "この商品を購入しますか？(y/n)"
   buy = gets.chomp
+  if buy == "y" || buy == "Y"
+    buy_item(item)
+  else
+    puts "購入せず商品棚戻します。"
+  end
 end
 def buy_item(item)  # 販売商品の購入を詳細から決定！
 
