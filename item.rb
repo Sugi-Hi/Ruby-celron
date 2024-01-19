@@ -28,7 +28,7 @@ def index_item(items)  # 販売商品の一覧
   input = gets.to_i
 
   if input>0 && input<=items.length
-    show_item(items[input-1])     
+    show_item(items[input-1])
   else
     puts "商品番号が無い為、再度入力し直して下さい。"
   end
@@ -36,9 +36,14 @@ def index_item(items)  # 販売商品の一覧
 end
 
 def show_item(item)
+  puts "商品名：#{item[:name]}"
+  puts "販売商品の値段　:#{item[:price]}"
+  puts "販売商品の個数　:#{item[:number]}"
+  puts "販売商品の種類　:#{item[:kind]}"
+  puts "販売商品の包装物:#{item[:form]}"
 
 end
-def buy_item(item)  # 販売商品の購入
+def buy_item(item)  
 
 end 
 
