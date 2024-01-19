@@ -43,7 +43,7 @@ def show_item(item)
   puts "販売商品の包装物:#{item[:form]}"
 
 end
-def buy_item(item)  
+def buy_item(item)  # 販売商品の購入を詳細から決定！
 
 end 
 
