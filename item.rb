@@ -50,7 +50,7 @@ def show_item(item)
   end
 end
 def buy_item(item)  # 販売商品の購入を詳細から決定！
-
+  money -= item[:price] 
 end 
 
 items = []  # 必要な商品データ情報
