@@ -31,7 +31,14 @@ def index_item(items)  # 販売商品の一覧
 
 
 end
+def show_item(item)
+  puts "商品名：#{item[:name]}"
+  puts "販売商品の値段　:#{item[:price]}"
+  puts "販売商品の個数　:#{item[:number]}"
+  puts "販売商品の種類　:#{item[:kind]}"
+  puts "販売商品の包装物:#{item[:form]}"
 
+end
 
 
 items = []  # 必要な商品データ情報
