@@ -37,7 +37,13 @@ def show_item(item)
   puts "販売商品の個数　:#{item[:number]}"
   puts "販売商品の種類　:#{item[:kind]}"
   puts "販売商品の包装物:#{item[:form]}"
-
+  puts "この商品を購入しますか？(購入する:y/yes)"
+  buy = gets.chomp
+  if buy == "y" || buy == "Y" || buy == "yes"
+    buy_item(item)
+  else
+    puts "購入せず商品棚戻します。"
+  end
 end
 
 
