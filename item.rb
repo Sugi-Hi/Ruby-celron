@@ -28,7 +28,11 @@ def index_item(items)  # 販売商品の一覧
   puts "詳細を見たい商品番号を数字入力して下さい！"
   input = gets.to_i
 
-
+  if input>0 && input<=items.length
+    show_item(items[input-1])
+  else
+    puts "商品番号が無い為、再度入力し直して下さい。"
+  end
 
 end
 def show_item(item)
