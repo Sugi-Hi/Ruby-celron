@@ -16,6 +16,24 @@ def register_item(items)  # 販売商品の登録
 end
 
 
+def index_item(items)  # 販売商品の一覧
+
+  index = 0
+
+  puts "店舗内の販売商品の一覧リスト"  
+  items.each do |item|
+    index += 1
+    puts "商品番号[#{index}]#{item[:name]}:#{item[:price]}円、#{item[:number]}個"
+  end
+  puts "詳細を見たい商品番号を数字入力して下さい！"
+  input = gets.to_i
+
+
+
+end
+
+
+
 items = []  # 必要な商品データ情報
 
 # 所持金
