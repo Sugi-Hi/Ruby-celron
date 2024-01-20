@@ -46,12 +46,12 @@ def show_item(item)
   end
 end
 def buy_item(item)  # 販売商品の購入を詳細から決定！
-  money -= item[:price] 
+  money -= item[:price] # 商品購入後、残金の表示
 end 
 
 items = []  # 必要な全商品データの保管への配列化
 
-# 所持金
+# 所持金の表示
 puts "初めの所持金(円)を入力して下さい！"
 money = gets.to_i
 
