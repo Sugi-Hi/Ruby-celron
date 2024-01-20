@@ -16,10 +16,9 @@ def register_item(items)  # 販売商品の登録
 end
 
 
-def index_item(items)  # 販売商品の一覧
+def index_item(items,money)  # 販売商品の一覧
 
   index = 0
-
   puts "店舗内の販売商品の一覧リスト"  
   items.each do |item|
     index += 1
@@ -29,28 +28,30 @@ def index_item(items)  # 販売商品の一覧
   input = gets.to_i
 
   if input>0 && input<=items.length
-    show_item(items[input-1])
+    show_item(items[input-1],money)
   else
     puts "商品番号が無い為、再度入力し直して下さい。"
   end
-
 end
-def show_item(item)
+def show_item(item,money)
   puts "商品名：#{item[:name]}"
   puts "販売商品の値段　:#{item[:price]}"
   puts "販売商品の個数　:#{item[:number]}"
   puts "販売商品の種類　:#{item[:kind]}"
   puts "販売商品の包装物:#{item[:form]}"
+
   puts "この商品を購入しますか？(購入する:y/yes)"
   buy = gets.chomp
   if buy == "y" || buy == "Y" || buy == "yes"
-    buy_item(item)
+    money -= buy_item(item)
+    puts "残金:#{money}"
   else
     puts "購入せず商品棚戻します。"
   end
 end
 def buy_item(item)  # 販売商品の購入を詳細から決定！
-  money -= item[:price] # 商品購入後、残金の表示
+  pay = item[:price] # 商品購入後、残金の表示
+  return pay
 end 
 
 items = []  # 必要な全商品データの保管への配列化
@@ -58,7 +59,7 @@ items = []  # 必要な全商品データの保管への配列化
 # 所持金の表示
 puts "初めの所持金(円)を入力して下さい！"
 money = gets.to_i
-
+pay = 0
 
 while true do  #コード番号[2]:終了まで永遠と繰り返し出力
   puts "店舗の販売商品において、やりたい事を下記のコード番号[0][1][2]で選択して下さい。"
@@ -70,7 +71,7 @@ while true do  #コード番号[2]:終了まで永遠と繰り返し出力
   if input == 0
     register_item(items)
   elsif input == 1
-    index_item(items)
+    index_item(items,money)
   elsif input == 2
     exit
   else
