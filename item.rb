@@ -1,5 +1,5 @@
 def register_item(items)  # 販売商品の登録
-  item = {}
+  item = {} # 必要な商品データ登録のハッシュ化
 
   puts "販売中の商品名を入力して下さい！"
   item[:name] = gets.chomp
@@ -49,7 +49,7 @@ def buy_item(item)  # 販売商品の購入を詳細から決定！
   money -= item[:price] 
 end 
 
-items = []  # 必要な商品データ情報の配列化
+items = []  # 必要な全商品データの保管への配列化
 
 # 所持金
 puts "初めの所持金(円)を入力して下さい！"
