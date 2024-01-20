@@ -1,3 +1,19 @@
+def register_item(items)  # 販売商品の登録
+  item = {}
+
+  puts "販売中の商品名を入力して下さい！"
+  item[:name] = gets.chomp
+  puts "販売商品の値段(円)を入力して下さい！"
+  item[:price] = gets.to_i
+  puts "販売商品の個数(1個入単位)を入力して下さい！"
+  item[:number] = gets.to_i
+  puts "販売商品の種類(食品、飲料、お菓子、衣類、生活品、文具、洗面具、植物など)を入力して下さい！"
+  item[:kind] = gets.chomp
+  puts "販売商品の包装物(袋、箱、パック、紙、ペットボトル、缶、ビン、容器、シールなど)"
+  item[:form] = gets.chomp
+
+  items << item
+end
 
 
 items = []  # 必要な商品データ情報
