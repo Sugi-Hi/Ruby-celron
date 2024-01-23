@@ -1,5 +1,5 @@
 def register_item(items)  # 販売商品の登録
-  item = {} # 必要な商品データ登録のハッシュ化
+  item = {}  # 必要な商品データ登録のハッシュ化
 
   puts "販売中の商品名を入力して下さい！"
   item[:name] = gets.chomp
@@ -50,7 +50,7 @@ def show_item(item,money)
   end
 end
 def buy_item(item)  # 販売商品の購入を詳細から決定！
-  pay = item[:price] # 商品購入後、残金の表示
+  pay = item[:price]   # 商品購入後、残金の表示
   return pay
 end 
 
@@ -61,7 +61,7 @@ puts "初めの所持金(円)を入力して下さい！"
 money = gets.to_i
 pay = 0
 
-while true do  #コード番号[2]:終了まで永遠と繰り返し出力
+while true do  # コード番号[2]:終了まで永遠と繰り返し出力
   puts "店舗の販売商品において、やりたい事を下記のコード番号[0][1][2]で選択して下さい。"
   puts "[0]販売されている商品データ登録"
   puts "[1]全販売商品データ一覧のチェック"
