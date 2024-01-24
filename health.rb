@@ -27,7 +27,9 @@ def index_health(healths)
 
 end
 
+def show_health(health)
 
+end
 
 healths = []
 
