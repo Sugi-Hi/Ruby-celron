@@ -18,6 +18,16 @@ def register_health(healths)
 
 end
 
+def index_health(healths)
+
+  puts "健康管理データを見たい人の登録番号を入力して下さい。"
+  healths.each do |health|
+    
+  end
+
+end
+
+
 
 healths = []
 
