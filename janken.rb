@@ -1,5 +1,5 @@
 def janken
-
+  play = ["グー","チョキ","パー"]
 end
 
 
