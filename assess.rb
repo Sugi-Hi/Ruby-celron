@@ -10,3 +10,5 @@ def show_member
 end
 
 data = []
+
+puts ""
