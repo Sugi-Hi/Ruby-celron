@@ -24,6 +24,9 @@ def index_health(healths)
   healths.each_with_index do |health, index|
     puts "[#{index+1}]#{health[:name]}、#{health[:age]}歳⇒速度:#{health[:distance]/health[:walktime]}[km/h]"
   end
+  input = gets.to_i
+  
+  show_health(health[input-1])
 
 end
 
