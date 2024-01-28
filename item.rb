@@ -1,4 +1,4 @@
-def register_item(items)  # 販売商品の登録
+def register_item(items,money)  # 販売商品の登録
   item = {}  # 必要な商品データ登録のハッシュ化
 
   puts "販売中の商品名を入力して下さい！"
@@ -12,11 +12,13 @@ def register_item(items)  # 販売商品の登録
   puts "販売商品の包装物(袋、箱、パック、紙、ペットボトル、缶、ビン、容器、シールなど)"
   item[:form] = gets.chomp
 
+  item[:wallet] = money
+  
   items << item
 end
 
 
-def index_item(items,money)  # 販売商品の一覧
+def index_item(items)  # 販売商品の一覧
 
   index = 0
   puts "店舗内の販売商品の一覧リスト"  
@@ -28,12 +30,12 @@ def index_item(items,money)  # 販売商品の一覧
   input = gets.to_i
 
   if input>0 && input<=items.length
-    show_item(items[input-1],money)
+    show_item(items[input-1])
   else
     puts "商品番号が無い為、再度入力し直して下さい。"
   end
 end
-def show_item(item,money)
+def show_item(item)
   puts "商品名：#{item[:name]}"
   puts "販売商品の値段　:#{item[:price]}"
   puts "販売商品の個数　:#{item[:number]}"
@@ -43,23 +45,22 @@ def show_item(item,money)
   puts "この商品を購入しますか？(購入する:y/yes)"
   buy = gets.chomp
   if buy == "y" || buy == "Y" || buy == "yes"
-    money -= buy_item(item)
-    puts "残金:#{money}"
+    item[:wallet] -= item[:price]
+    puts "残金:#{item[:wallet]}"  # 定義文引用
   else
     puts "購入せず商品棚戻します。"
   end
 end
-def buy_item(item)  # 販売商品の購入を詳細から決定！
-  pay = item[:price]   # 商品購入後、残金の表示
-  return pay
-end 
+# def buy_item(item,money)  # 販売商品の購入を詳細から決定！
+#   money -= item[:price]   # 商品購入後、残金の表示
+#   return money
+# end 
 
 items = []  # 必要な全商品データの保管への配列化
 
 # 所持金の表示
 puts "初めの所持金(円)を入力して下さい！"
 money = gets.to_i
-pay = 0
 
 while true do  # コード番号[2]:終了まで永遠と繰り返し出力
   puts "店舗の販売商品において、やりたい事を下記のコード番号[0][1][2]で選択して下さい。"
@@ -69,9 +70,9 @@ while true do  # コード番号[2]:終了まで永遠と繰り返し出力
   input = gets.to_i
 
   if input == 0
-    register_item(items)
+    register_item(items,money)
   elsif input == 1
-    index_item(items,money)
+    index_item(items)
   elsif input == 2
     exit
   else
