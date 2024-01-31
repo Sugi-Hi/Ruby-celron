@@ -35,7 +35,7 @@ def index_item(items)  # 販売商品の一覧
     puts "商品番号が無い為、再度入力し直して下さい。"
   end
 end
-def show_item(item)
+def show_item(item)  # 販売商品の詳細
   puts "商品名：#{item[:name]}"
   puts "販売商品の値段　:#{item[:price]}"
   puts "販売商品の個数　:#{item[:number]}"
@@ -48,7 +48,7 @@ def show_item(item)
     item[:wallet] -= item[:price]
     puts "残金:#{item[:wallet]}"  # 定義文引用
   else
-    puts "購入せず商品棚戻します。"
+    puts "購入せず商品棚に戻します。"
   end
 end
 # def buy_item(item,money)  # 販売商品の購入を詳細から決定！
