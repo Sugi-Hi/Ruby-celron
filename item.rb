@@ -24,7 +24,7 @@ def index_item(items)  # 販売商品の一覧
   puts "店舗内の販売商品の一覧リスト"  
   items.each do |item|
     index += 1
-    puts "商品番号[#{index}]#{item[:name]}:#{item[:price]}円、#{item[:number]}個"
+    puts "商品番号[#{index}]#{item[:name]}：#{item[:price]}円、#{item[:number]}個"
   end
   puts "詳細を見たい商品番号を数字入力して下さい！"
   input = gets.to_i
@@ -42,7 +42,7 @@ def show_item(item)  # 販売商品の詳細
   puts "販売商品の種類　:#{item[:kind]}"
   puts "販売商品の包装物:#{item[:form]}"
 
-  puts "この商品を購入しますか？(購入する:y/yes)"
+  puts "この商品を購入しますか？(購入する:y(Y)/yes)"
   buy = gets.chomp
   if buy == "y" || buy == "Y" || buy == "yes"
     item[:wallet] -= item[:price]
