@@ -1,5 +1,6 @@
 def register_member(data)
-
+  puts
+  gets
 end
 
 def index_member(data)
