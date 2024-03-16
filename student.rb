@@ -14,7 +14,7 @@ def register_student(students)
   puts "英語の点数を入力して下さい:"
   english = gets.to_i
 
-  student = {name: name, room: room, jap: japanese, math: math, social: social, science: science, eng: english, sum: (japanese+math+social+science+english)} # 各受験生徒のデータ成績のハッシュ化
+  student = {name: name, room: room, jap: japanese, math: math, social: social, ence: science, eng: english, sum: (japanese+math+social+science+english)} # 各受験生徒のデータ成績のハッシュ化
   students << student # 一人一人の受験生徒を全生徒へ追加
   
 end
@@ -37,23 +37,23 @@ end
 
 def show_student(student) # 選択した受験生徒の詳細
   puts "氏名：#{student[:name]} 、#{student[:room]}組"
-  puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:science]}点、英語：#{student[:eng]}点"
-  puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:science]+student[:eng]}：合計点
+  puts "国語：#{student[:jap]}点、数学：#{student[:math]}点、社会：#{student[:social]}点、理科：#{student[:ence]}点、英語：#{student[:eng]}点"
+  puts "5教科の合計点⇒#{student[:sum]}点"  # {student[:jap]+student[:math]+student[:social]+student[:ence]+student[:eng]}：合計点
 end
 def average(students) # 平均点
   sum_jap=0
   sum_math=0
   sum_social=0
-  sum_science=0
+  sum_ence=0
   sum_eng=0
   students.each do |student|
     sum_jap     += student[:jap]
     sum_math    += student[:math]
     sum_social  += student[:social]
-    sum_science += student[:science]
+    sum_ence += student[:ence]
     sum_eng     += student[:eng]
   end  
-  puts "各教科の平均点⇒ 国語：#{sum_jap/students.length}点、数学：#{sum_math/students.length}点、社会：#{sum_social/students.length}点、理科：#{sum_science/students.length}点、英語：#{sum_eng/students.length}点"
+  puts "各教科の平均点⇒ 国語：#{sum_jap/students.length}点、数学：#{sum_math/students.length}点、社会：#{sum_social/students.length}点、理科：#{sum_ence/students.length}点、英語：#{sum_eng/students.length}点"
 end
 
 
